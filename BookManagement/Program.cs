@@ -1,7 +1,9 @@
 ﻿using BookManagement.Data;
 using BookManagement.Models.Entity;
+using BookManagement.SeedData;
 using BookManagement.Service;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Rotativa.AspNetCore;
 
@@ -84,5 +86,12 @@ app.UseRotativa();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var authService = services.GetRequiredService<IAuthService>();
+    var dbContext = services.GetRequiredService<AppDbContext>();
+    var seeder = new DbSeeder(authService,dbContext); 
+    await seeder.SeedAsync(); // Chạy seeder
+}
 app.Run();
