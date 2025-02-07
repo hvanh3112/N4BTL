@@ -24,8 +24,15 @@ namespace BookManagement.Service
         {
             var user = _mapper.Map<User>(model);
 
+            if(model.RoleEnumSeeder == null)
+            {
+                user.RoleType = Constant.RoleEnum.User;
+            }
+            else
+            {
+                user.RoleType = (Constant.RoleEnum)model.RoleEnumSeeder;
+            }
             user.Password = await HashPassword(model.Password);
-            user.RoleType = Constant.RoleEnum.User;
             user.IsDelete = false;
             user.IsActive = true;
 
