@@ -21,10 +21,10 @@ Web bán sách cơ bản, không cầu kỳ, có thể sử dụng template
 
 ## Hướng dẫn cách đổi từ mysql => sql server  (tải database: mysql, sql server)
 + clone như bước 1 và checkout ra 1 nhánh khác(lưu ý không chỉnh sửa trên nhánh main)
-+ tải nuget Microsoft.EntityFrameworkCore.SqlServer về dự án
++ tải nuget Microsoft.EntityFrameworkCore.SqlServer Version="7.0.10" về dự án
 + vào phần Programs.cs thay thổi đoạn mã code
 + ![image](https://github.com/user-attachments/assets/6e515c1d-5042-4ad9-acb1-2a67f4bd4ec1)
-+ => này thành
++ => này thành 
 + ![image](https://github.com/user-attachments/assets/3b9392ab-3a87-46d4-a88b-9506f0d46f0d)
 + Lưu ý : Chuỗi kết nối SQL Server thường có dạng: "Server=localhost;Database=MyDb;User Id=sa;Password=yourpassword;TrustServerCertificate=True;"
 + Rồi bắt đầu lại từ bước 2 của phần Hướng dẫn cách clone bên trên
