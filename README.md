@@ -11,7 +11,7 @@ Web bán sách cơ bản, không cầu kỳ, có thể sử dụng template
 ![alt text](https://github.com/buibaouet/BookStore/blob/master/List%20ch%E1%BB%A9c%20n%C4%83ng.jpg)
 
 ## Hướng dẫn cách clone (tải database: mysql, sql server)
-1. Clone dự án về phía máy local
+1. Clone dự án về phía máy local (checkout ra 1 nhánh khác(lưu ý không chỉnh sửa trên nhánh main))
 2. Thay đổi chuỗi kết nối ConnectionStrings trong appsetting của bạn ![image](https://github.com/user-attachments/assets/cb6dcaf4-5909-478e-98f7-d0207d7ade2f)
 3. Vào folder Migration xoá hết những file trong đó => Open in terminal => chạy lệnh: dotnet ef migrations add InitialCreate, check file vừa được tạo, => cuối cùng chạy lệnh: dotnet ef database update
 4. Chạy chương trình lần đầu tiên (sẽ tự động thêm 3 tài khoản)
@@ -20,6 +20,7 @@ Web bán sách cơ bản, không cầu kỳ, có thể sử dụng template
       + người dùng : user@example.com - Password123!
 
 ## Hướng dẫn cách đổi từ mysql => sql server  (tải database: mysql, sql server)
++ clone như bước 1 và checkout ra 1 nhánh khác(lưu ý không chỉnh sửa trên nhánh main)
 + tải nuget Microsoft.EntityFrameworkCore.SqlServer về dự án
 + vào phần Programs.cs thay thổi đoạn mã code
 + ![image](https://github.com/user-attachments/assets/6e515c1d-5042-4ad9-acb1-2a67f4bd4ec1)
