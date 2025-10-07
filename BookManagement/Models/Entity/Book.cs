@@ -94,13 +94,17 @@ namespace BookManagement.Models.Entity
         /// <summary>
         /// Ảnh bìa sách
         /// </summary>
-        [Required(ErrorMessage = "Vui lòng chọn ảnh bìa sách")]
-        public string BookImage { get; set; }
+        //[Required(ErrorMessage = "Vui lòng chọn ảnh bìa sách")]
+        //public string BookImage { get; set; }
+        [AllowNull]
+        public string? BookImage { get; set; }
         /// <summary>
         /// Các ảnh thêm
         /// </summary>
-        [Required(ErrorMessage = "Vui lòng chọn thêm ảnh mô tả")]
-        public string InfoImage { get; set; }
+        //[Required(ErrorMessage = "Vui lòng chọn thêm ảnh mô tả")]
+        //public string InfoImage { get; set; }
+        [AllowNull]
+        public string? InfoImage { get; set; }
         /// <summary>
         /// Trạng thái
         /// </summary>

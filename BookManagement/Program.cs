@@ -16,6 +16,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 var connectionString = builder.Configuration.GetConnectionString("MySql");
+
 builder.Services.AddDbContext<AppDbContext>(option =>
 {
     option.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));

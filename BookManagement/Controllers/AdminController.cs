@@ -286,6 +286,11 @@ namespace BookManagement.Controllers
 
             if (ModelState.IsValid)
             {
+                if (string.IsNullOrEmpty(model.BookImage))
+                    model.BookImage = "img-empty.png";
+                if (string.IsNullOrEmpty(model.InfoImage))  
+                    model.InfoImage = "img-empty.png";
+
                 if (model.CategoryId == 0)
                 {
                     ModelState.AddModelError("CategoryId", "Vui lòng chọn danh mục");
