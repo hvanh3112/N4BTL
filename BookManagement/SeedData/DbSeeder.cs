@@ -32,6 +32,7 @@ namespace BookManagement.SeedData
                 FirstName = "Admin",
                 LastName = "User",
                 Email = "admin@example.com",
+                RoleEnumSeeder = RoleEnum.Admin,
                 Password = "Password123!", // Mật khẩu mặc định
             };
 
@@ -43,6 +44,7 @@ namespace BookManagement.SeedData
                 FirstName = "Staff",
                 LastName = "User",
                 Email = "staff@example.com",
+                RoleEnumSeeder = RoleEnum.Staff,
                 Password = "Password123!", // Mật khẩu mặc định
             };
 
@@ -54,6 +56,7 @@ namespace BookManagement.SeedData
                 FirstName = "Normal",
                 LastName = "User",
                 Email = "user@example.com",
+                RoleEnumSeeder = RoleEnum.User,
                 Password = "Password123!", // Mật khẩu mặc định
             };
 

@@ -10394,9 +10394,15 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 #logoImg {
+<<<<<<< HEAD
+    height: 80px;
+    width: 250px;
+    background-image: url(../img/logo.jpg);
+=======
     height: 82px;
     width: 120px;
     background-image: url(../img/logo-img.jpeg);
+>>>>>>> main
     background-size: cover;
 }
 

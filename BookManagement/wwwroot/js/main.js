@@ -1,6 +1,10 @@
 ﻿(function ($) {
     "use strict";
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> main
     // Dropdown on mouse hover
     $(document).ready(function () {
         function toggleNavbarMethod() {
@@ -17,10 +21,18 @@
         toggleNavbarMethod();
         $(window).resize(toggleNavbarMethod);
 
+<<<<<<< HEAD
+        // Password validation
+        $('.register-form #inp-password').on('input', function () {
+            let pass = this.value,
+                name = this.getAttribute('name');
+
+=======
         $('.register-form #inp-password').on('input', function () {
             let pass = this.value,
                 name = this.getAttribute('name');                ;
             
+>>>>>>> main
             if (pass.length == 0) {
                 $(`span[data-valmsg-for="${name}"]`).text('Mật khẩu không được để trống');
             }
@@ -38,7 +50,11 @@
         $('.register-form #inp-re-password').on('input', function () {
             let repass = this.value,
                 name = this.getAttribute('name'),
+<<<<<<< HEAD
+                pass = $('.register-form #inp-password').val();
+=======
                 pass = $('.register-form #inp-password').val();                ;
+>>>>>>> main
 
             if (repass !== pass) {
                 $(`span[data-valmsg-for="${name}"]`).text('Mật khẩu không khớp');
@@ -48,8 +64,12 @@
             }
         });
     });
+<<<<<<< HEAD
+
+=======
     
     
+>>>>>>> main
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -59,6 +79,46 @@
         }
     });
     $('.back-to-top').click(function () {
+<<<<<<< HEAD
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+        return false;
+    });
+
+    // Vendor carousel
+    if ($('.vendor-carousel').length && $.fn.owlCarousel) {
+        $('.vendor-carousel').owlCarousel({
+            loop: true,
+            margin: 29,
+            nav: false,
+            autoplay: true,
+            smartSpeed: 1000,
+            responsive: {
+                0: { items: 2 },
+                576: { items: 3 },
+                768: { items: 4 },
+                992: { items: 5 },
+                1200: { items: 6 }
+            }
+        });
+    }
+
+    // Related carousel
+    if ($('.related-carousel').length && $.fn.owlCarousel) {
+        $('.related-carousel').owlCarousel({
+            loop: true,
+            margin: 29,
+            nav: false,
+            autoplay: true,
+            smartSpeed: 1000,
+            responsive: {
+                0: { items: 1 },
+                576: { items: 2 },
+                768: { items: 3 },
+                992: { items: 4 }
+            }
+        });
+    }
+=======
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
@@ -114,12 +174,22 @@
         }
     });
 
+>>>>>>> main
 
     // Product Quantity
     $('.quantity button').on('click', function () {
         var button = $(this);
         let maxQuantity = parseInt(button.attr('max-quantity'));
         var oldValue = button.parent().parent().find('input').val();
+<<<<<<< HEAD
+        var newVal = parseFloat(oldValue);
+
+        if (button.hasClass('btn-plus')) {
+            if (oldValue < maxQuantity) newVal = parseFloat(oldValue) + 1;
+        } else {
+            if (oldValue > 1) newVal = parseFloat(oldValue) - 1;
+            else newVal = 1;
+=======
         if (button.hasClass('btn-plus')) {
             var newVal = parseFloat(oldValue);
 
@@ -132,9 +202,13 @@
             } else {
                 newVal = 1;
             }
+>>>>>>> main
         }
         button.parent().parent().find('input').val(newVal);
     });
 
 })(jQuery);
+<<<<<<< HEAD
+=======
 
+>>>>>>> main

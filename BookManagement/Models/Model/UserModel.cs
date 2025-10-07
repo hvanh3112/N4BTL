@@ -42,6 +42,12 @@ namespace BookManagement.Models.Model
 
         [Compare("Password", ErrorMessage = "Mật khẩu không khớp")]
         public string ConfirmPassword { get; set; }
+
+        /// <summary>
+        /// config seed data
+        /// </summary>
+        public RoleEnum? RoleEnumSeeder { get; set; }
+
     }
 
     public class UserInfomationModel : BaseEntity

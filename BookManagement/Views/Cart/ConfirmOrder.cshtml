@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+﻿﻿@using BookManagement.Models.Model
+=======
 ﻿@using BookManagement.Models.Model;
+>>>>>>> main
 @using static BookManagement.Constant.Enumerations
 @model CartConfirmModel
 
@@ -26,15 +30,32 @@
                 <a class="nav-item nav-link" href="/cart/ordercomplete">Hoàn thành</a>
                 <a class="nav-item nav-link" href="/cart/ordercancel">Đã hủy</a>
             </div>
+<<<<<<< HEAD
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active">
+                    @using (Html.BeginForm("ConfirmOrder", "Cart", FormMethod.Post))
+=======
             <div class="tab-content">
                 <div class="tab-pane fade show active">
                     @using (@Html.BeginForm("ConfirmOrder", "Cart", FormMethod.Post))
+>>>>>>> main
                     {
                         <div class="row">
                             <h5 class="font-weight-medium primary-color mb-3">Mã đơn hàng: <b>#@Model.OrderCode</b></h5>
                             @Html.HiddenFor(m => m.VoucherId)
                             @Html.HiddenFor(m => m.OrderCode)
                             @Html.HiddenFor(m => m.DeliveryId)
+<<<<<<< HEAD
+                            @Html.HiddenFor(m => m.ShipCost)
+                            @Html.HiddenFor(m => m.Discount)
+                            @Html.HiddenFor(m => m.TotalMoney)
+
+                            <!-- Hiển thị lỗi nếu form không hợp lệ -->
+                            <div asp-validation-summary="All" class="text-danger mb-2"></div>
+
+=======
+>>>>>>> main
                             <div class="col-lg-7 table-responsive mb-5">
                                 <div class="mb-1">
                                     <h4 class="font-weight-semi-bold mb-3">Thông tin người nhận</h4>
@@ -60,6 +81,10 @@
                                         </div>
                                     </div>
                                 </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
                                 <div>
                                     <h4 class="font-weight-semi-bold mb-3">Phương thức thanh toán</h4>
 
@@ -67,7 +92,11 @@
                                         <div class="col-md mb-md-0 mb-2">
                                             <div class="form-check custom-option custom-option-basic checked">
                                                 <label class="form-check-label custom-option-content form-check-input-payment d-flex gap-3 align-items-center" for="paymentCOD">
+<<<<<<< HEAD
+                                                    @Html.RadioButtonFor(m => m.PaymentType, PaymentType.Cod, new { @id = "paymentCOD", @class = "form-check-input", @checked = "checked" })
+=======
                                                     <input name="paymentType" class="form-check-input" type="radio" value="@PaymentType.Cod" id="paymentCOD" checked="">
+>>>>>>> main
                                                     <span class="custom-option-body">
                                                         <span class="ms-3">Thanh toán khi nhận hàng</span>
                                                     </span>
@@ -77,7 +106,11 @@
                                         <div class="col-md mb-md-0 mb-2">
                                             <div class="form-check custom-option custom-option-basic">
                                                 <label class="form-check-label custom-option-content form-check-input-payment d-flex gap-3 align-items-center" for="paymentOnline">
+<<<<<<< HEAD
+                                                    @Html.RadioButtonFor(m => m.PaymentType, PaymentType.Online, new { @id = "paymentOnline", @class = "form-check-input" })
+=======
                                                     <input name="paymentType" class="form-check-input" type="radio" value="@PaymentType.Online" id="paymentOnline">
+>>>>>>> main
                                                     <span class="custom-option-body">
                                                         <span class="ms-3">Thanh toán online</span>
                                                     </span>
@@ -85,6 +118,10 @@
                                             </div>
                                         </div>
                                     </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
                                     <div id="payment-online-info" class="d-none">
                                         <h5 class="mt-4">Thông tin thanh toán</h5>
                                         <div class="row my-2">
@@ -126,16 +163,46 @@
                                                 </div>
                                             </div>
                                         </div>
+<<<<<<< HEAD
+                                    </div>
+                                </div>
+                            </div>
+
+=======
 
                                     </div>
                                 </div>
                             </div>
+>>>>>>> main
                             <div class="col-lg-5">
                                 <div class="card border-secondary mb-4">
                                     <div class="card-header bg-secondary border-0">
                                         <h4 class="font-weight-semi-bold m-0">Tổng cộng</h4>
                                     </div>
                                     <div class="card-body">
+<<<<<<< HEAD
+                                        @if (ViewBag.CartInfo.CartItems != null && ViewBag.CartInfo.CartItems.Count > 0)
+                                        {
+                                            foreach (var item in ViewBag.CartInfo.CartItems)
+                                            {
+                                                <div class="d-flex justify-content-between mb-2 pt-1">
+                                                    <div class="d-flex">
+                                                        <div class="flex-shrink-0 me-3">
+                                                            <div class="align-middle">
+                                                                <img src="/uploads/@item.BookImage" class="img-book-td mx-1" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex-grow-1">
+                                                            <h6 class="font-weight-medium d-block">@item.BookName</h6>
+                                                            <small class="text-muted">x(@item.Quantity)</small>
+                                                        </div>
+                                                    </div>
+                                                    <h6 class="font-weight-medium">@(item.TotalMoney.ToString("#,##0")) đ</h6>
+                                                </div>
+                                            }
+                                        }
+
+=======
                                         @{
                                             if (ViewBag.CartInfo.CartItems != null && ViewBag.CartInfo.CartItems.Count > 0)
                                             {
@@ -158,6 +225,7 @@
                                                 }
                                             }
                                         }
+>>>>>>> main
                                         <hr class="mt-0">
                                         <div class="d-flex justify-content-between mb-2">
                                             <h6 class="font-weight-medium">Tổng</h6>
@@ -166,21 +234,34 @@
                                         <div class="d-flex justify-content-between mb-2">
                                             <h6 class="font-weight-medium">Phí vận chuyển</h6>
                                             <h6 class="font-weight-medium">@(Model.ShipCost.ToString("#,##0")) đ</h6>
+<<<<<<< HEAD
+=======
                                             @Html.HiddenFor(m => m.ShipCost)
+>>>>>>> main
                                         </div>
                                         <div class="d-flex justify-content-between">
                                             <h6 class="font-weight-medium">Khuyến mại:</h6>
                                             <h6 class="font-weight-medium text-muted"><del>@(Model.Discount.ToString("#,##0")) đ</del></h6>
+<<<<<<< HEAD
+                                        </div>
+                                    </div>
+
+=======
                                             @Html.HiddenFor(m => m.Discount)
                                         </div>
                                     </div>
+>>>>>>> main
                                     <div class="card-footer border-secondary bg-transparent">
                                         <div class="d-flex justify-content-between mt-2">
                                             <h5 class="font-weight-bold">Tổng tiền:</h5>
                                             <h5 class="font-weight-bold">@(Model.TotalMoney.ToString("#,##0")) đ</h5>
+<<<<<<< HEAD
+                                        </div>
+=======
                                             @Html.HiddenFor(m => m.TotalMoney)
                                         </div>
 
+>>>>>>> main
                                         <button type="submit" class="btn btn-block btn-primary mt-3 py-3">Xác nhận</button>
                                     </div>
                                 </div>
@@ -192,22 +273,39 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+
+@section scripts {
+    <script>
+        $('input[type=radio][name="PaymentType"]').on('change', function (e) {
+=======
 @section scripts {
     <script>
         $('input[type=radio][name=paymentType]').on('change', function (e) {
+>>>>>>> main
             $(".custom-option").removeClass("checked");
             e.target.closest(".custom-option").classList.add("checked");
 
             switch ($(this).val()) {
                 case '@PaymentType.Cod':
                     $('#payment-online-info').addClass('d-none');
+<<<<<<< HEAD
+                    break;
+                case '@PaymentType.Online':
+                    $('#payment-online-info').removeClass('d-none');
+=======
 
                     break;
                 case '@PaymentType.Online':
                     $('#payment-online-info').removeClass('d-none');
 
+>>>>>>> main
                     break;
             }
         });
     </script>
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main
